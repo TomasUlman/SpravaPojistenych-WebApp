@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detail Pojištěnce</title>
+        <link rel="stylesheet" href="styl.css" type="text/css" />
+        <meta name="description" content="Aplikace pro správu pojištění." />
+        <meta name="keywords" content="pojištění, správa" />
+        <meta name="author" content="Tomáš Ulman" />
+    </head>
+
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index">
+                    <h1>Správa pojištění<small> App</small></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="pojistenci">Pojištěnci</a></li>
+                    <li><a href="pojisteni">Pojištění</a></li>
+                    <li><a href="udalosti">Události</a></li>
+                    <li><a href="oaplikaci">O aplikaci...</a></li>
+                    <li><a href="prihlasit">Přihlásit</a></li>
+                    <li><a href="registrovat">Registrovat</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="centrovany">
+                <img src="userPicture.png" alt="profilePicture">
+                <p>
+                    <span th:text="${pojistenec.jmeno} + ' ' + ${pojistenec.prijmeni}" style="font-size: 20px; font-weight: bold;"></span></br></br>
+                    <span th:text="${pojistenec.uliceACislo}"></span></br></br>
+                    <span th:text="${pojistenec.mesto}"></span></br></br>
+                    <span th:text="${pojistenec.psc}"></span></br></br>
+                </p>
+                <p></br></br></br>
+                    <span th:text="${pojistenec.email}"></span></br></br>
+                    <span th:text="${pojistenec.telefon}"></span></br></br>
+                </p>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <h2>Sjednaná pojištění</h2>
+                    <thead>
+                        <tr>
+                            <th>Pojištění</th>
+                            <th>Částka</th>
+                            <th>Platnost od</th>
+                            <th>Platnost do</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pojisteni : ${seznamPojisteni}">
+                            <td>
+                                <span th:text="${pojisteni.typ}"></span>
+                            </td>
+
+                            <td><span
+                                    th:text="${pojisteni.castka}"></span>
+                            </td>
+                            <td><span
+                                    th:text="${pojisteni.platnostOd}"></span>
+                            </td>
+                            <td><span
+                                    th:text="${pojisteni.platnostDo}"></span>
+                            </td>
+                            <td class="tlacitkaTabulky">
+                                <form
+                                    th:action="@{/pojisteni/odstranit/{typ}/{castka}(typ=${pojisteni.typ}, castka=${pojisteni.castka})}"
+                                    method="get">
+                                    <button class="odstranit">Odstranit</button>
+                                </form>
+                                <form th:action="@{/pojisteni/editovat/{typ}/{castka}(typ=${pojisteni.typ}, castka=${pojisteni.castka})}"
+                                      method="get">
+                                    <button class="editovat">Editovat</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <span class="tlacitkaPodTabulkou">
+                <form></form>
+                <form th:action="@{/novePojisteni}" method="get">
+                    <button class="pridatPojisteni">Přidat pojištění</button>
+                </form>
+                <form
+                    th:action="@{/pojistenci/editovat/{jmeno}/{prijmeni}/{telefon}(jmeno=${pojistenec.jmeno}, prijmeni=${pojistenec.prijmeni}, telefon=${pojistenec.telefon})}"
+                    method="get">
+                    <button class="editovat">Editovat pojištěnce</button>
+                </form>
+                <form
+                    th:action="@{/pojistenci/odstranit/{jmeno}/{prijmeni}/{telefon}(jmeno=${pojistenec.jmeno}, prijmeni=${pojistenec.prijmeni}, telefon=${pojistenec.telefon})}"
+                    method="get">
+                    <button class="odstranit">Odstranit pojištěnce</button>
+                </form>
+            </span>
+        </section>
+        <footer>
+            Vytvořil &copy;Tomáš Ulman pro <a href="https://itnetwork.cz">itnetwork.cz</a>
+        </footer>
+    </body>
+
+</html>

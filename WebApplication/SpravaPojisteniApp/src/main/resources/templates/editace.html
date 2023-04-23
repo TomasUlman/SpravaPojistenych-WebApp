@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editace pojištěnce</title>
+    <link rel="stylesheet" href="styl.css" type="text/css" />
+    <meta name="description" content="Aplikace pro správu pojištění." />
+    <meta name="keywords" content="pojištění, správa" />
+    <meta name="author" content="Tomáš Ulman" />
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="index">
+                <h1>Správa pojištění<small> App</small></h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pojistenci">Pojištěnci</a></li>
+                <li><a href="pojisteni">Pojištění</a></li>
+                <li><a href="udalosti">Události</a></li>
+                <li><a href="oaplikaci">O aplikaci...</a></li>
+                <li><a href="prihlasit">Přihlásit</a></li>
+                <li><a href="registrovat">Registrovat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Editace pojištěnce</h2>        
+        <form action="/editace" method="post">
+            <label><span>Jméno:</span>
+                <input type="text" id="jmeno" name="jmeno" th:value="${pojistenec.jmeno}" required/>
+                <label /><br />
+                <label><span>Příjmení:</span>
+                    <input type="text" id="prijmeni" name="prijmeni" th:value="${pojistenec.prijmeni}" required/>
+                    <label /><br />
+                    <label><span>Ulice a číslo popisné:</span>
+                        <input type="text" id="uliceAcislo" name="uliceACislo" th:value="${pojistenec.uliceACislo}" required/>
+                        <label /><br />
+                        <label><span>Město:</span>
+                            <input type="text" id="mesto" name="mesto" th:value="${pojistenec.mesto}" required/>
+                            <label /><br />
+                            <label><span>PSČ:</span>
+                                <input type="text" id="psc" name="psc" th:value="${pojistenec.psc}" required/>
+                                <label /><br />
+                                <label><span>Email:</span>
+                                    <input type="text" id="email" name="email" th:value="${pojistenec.email}" required/>
+                                    <label /><br />
+                                    <label><span>Telefon:</span>
+                                        <input type="text" id="telefon" name="telefon"
+                                            th:value="${pojistenec.telefon}" required/>
+                                        <label /><br />
+                                        <input class="ulozit" type="submit" value="Uložit" />
+        </form>
+    </section>
+    <footer>
+        Vytvořil &copy;Tomáš Ulman pro <a href="https://itnetwork.cz">itnetwork.cz</a>
+    </footer>
+</body>
+
+</html>

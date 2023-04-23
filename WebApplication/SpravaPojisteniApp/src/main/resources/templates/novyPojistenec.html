@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nový pojištěnec</title>
+    <link rel="stylesheet" href="styl.css" type="text/css" />
+    <meta name="description" content="Aplikace pro správu pojištění." />
+    <meta name="keywords" content="pojištění, správa" />
+    <meta name="author" content="Tomáš Ulman" />
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="index">
+                <h1>Správa pojištění<small> App</small></h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pojistenci">Pojištěnci</a></li>
+                <li><a href="pojisteni">Pojištění</a></li>
+                <li><a href="udalosti">Události</a></li>
+                <li><a href="oaplikaci">O aplikaci...</a></li>
+                <li><a href="prihlasit">Přihlásit</a></li>
+                <li><a href="registrovat">Registrovat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Nový pojištěnec</h2>
+        <form action="/novyPojistenec" method="post">
+            <label>
+                Jméno:
+                <input type="text" id="jmeno" name="jmeno" th:field="${pojistenecDTO.jmeno}" required/>
+                <label /><br />
+                <label>
+                    Příjmení:
+                    <input type="text" id="prijmeni" name="prijemeni" th:field="${pojistenecDTO.prijmeni}" required/>
+                    <label /><br />
+                    <label>
+                        Ulice a číslo popisné:
+                        <input type="text" id="uliceACislo" name="uliceACislo"
+                            th:field="${pojistenecDTO.UliceACislo}" />
+                        <label /><br />
+                        <label>
+                            Město:
+                            <input type="text" id="mesto" name="mesto" th:field="${pojistenecDTO.mesto}" />
+                            <label /><br />
+                            <label>
+                                PSČ:
+                                <input type="text" id="psc" name="psc" th:field="${pojistenecDTO.psc}" />
+                                <label /><br />
+                                <label>
+                                    Email:
+                                    <input type="text" id="email" name="email" th:field="${pojistenecDTO.email}" />
+                                    <label /><br />
+                                    <label>
+                                        Telefon:
+                                        <input type="text" id="telefon" name="telefon"
+                                            th:field="${pojistenecDTO.telefon}" />
+                                        <label /><br />
+                                        <input class="ulozit" type="submit" value="Uložit" />
+        </form>
+    </section>
+    <footer>
+        Vytvořil &copy;Tomáš Ulman pro <a href="https://itnetwork.cz">itnetwork.cz</a>
+    </footer>
+</body>
+
+</html>

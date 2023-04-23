@@ -1,0 +1,281 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+body>header {
+    height: 100px;
+    width: 100%;
+    background: #00050a;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+header a:hover,
+.aktivni a {
+    border-bottom: 2px solid #faf7f6;
+}
+
+#logo {
+    height: 20px;
+    margin: auto 0 auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+#logo a {
+    text-decoration: none;
+}
+
+#logo h1 {
+    font-weight: normal;
+    font-size: 1.2em;
+    color: white;
+}
+
+#logo small {
+    text-transform: uppercase;
+    font-size: 0.65em;
+}
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+nav ul li {
+    padding: 0 25px;
+    margin: 0 5px;
+    font-size: 1em;
+    line-height: 4.3em;
+}
+
+nav ul a {
+    color: white;
+    padding: 8px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul a:hover,
+.aktivni a {
+    border-bottom: 2px solid #faf7f6;
+
+}
+
+footer {
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px 0 0 0;
+    color: white;
+    background: #000000;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+section h2 {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    margin-right: 70vh;
+    margin-bottom: 5vh;
+    margin-top: 10vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100vh;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+/* pagination */
+.table-wrapper {
+    display: block;
+    max-height: 350px;
+    overflow: auto;
+    margin-bottom: 1em;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+    background-color: #bdbdbd;
+    color: #000000;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+th:last-of-type {
+    width: 20%;
+}
+
+button.odstranit {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button.editovat {
+    background-color: rgb(255, 200, 2);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.tlacitkaTabulky {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+}
+
+.tlacitkaPodTabulkou {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button.pridatPojisteni {
+    background-color: rgb(2, 133, 255);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button.novyPojistenec {
+    background-color: rgb(2, 133, 255);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="date"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+.ulozit {
+    background-color: rgb(2, 133, 255);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+.centrovany {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20vh;
+}
