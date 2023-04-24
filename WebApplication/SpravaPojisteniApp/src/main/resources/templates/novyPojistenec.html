@@ -44,24 +44,24 @@
                     <label>
                         Ulice a číslo popisné:
                         <input type="text" id="uliceACislo" name="uliceACislo"
-                            th:field="${pojistenecDTO.UliceACislo}" />
+                            th:field="${pojistenecDTO.UliceACislo}" required/>
                         <label /><br />
                         <label>
                             Město:
-                            <input type="text" id="mesto" name="mesto" th:field="${pojistenecDTO.mesto}" />
+                            <input type="text" id="mesto" name="mesto" th:field="${pojistenecDTO.mesto}" required/>
                             <label /><br />
                             <label>
                                 PSČ:
-                                <input type="text" id="psc" name="psc" th:field="${pojistenecDTO.psc}" />
+                                <input type="text" id="psc" name="psc" th:field="${pojistenecDTO.psc}" required/>
                                 <label /><br />
                                 <label>
                                     Email:
-                                    <input type="text" id="email" name="email" th:field="${pojistenecDTO.email}" />
+                                    <input type="text" id="email" name="email" th:field="${pojistenecDTO.email}" required/>
                                     <label /><br />
                                     <label>
                                         Telefon:
                                         <input type="text" id="telefon" name="telefon"
-                                            th:field="${pojistenecDTO.telefon}" />
+                                            th:field="${pojistenecDTO.telefon}" required/>
                                         <label /><br />
                                         <input class="ulozit" type="submit" value="Uložit" />
         </form>

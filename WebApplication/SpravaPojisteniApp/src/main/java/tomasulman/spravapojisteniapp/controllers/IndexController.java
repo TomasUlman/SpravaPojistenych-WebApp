@@ -20,8 +20,7 @@ public class IndexController {
     private ZaznamService zaznamService;
     
     @GetMapping("/index")
-    public String index() {
-            zaznamService.vytvorPrvniho();
+    public String index() {            
         return "index";
     }
 
